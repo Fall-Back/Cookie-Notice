@@ -1,0 +1,58 @@
+/*------------------------------------------------------------------------------------------------*\
+    Fall-Back Cookie Notice Pattern v0.1
+\*------------------------------------------------------------------------------------------------*/
+
+// Sizes:
+
+$fallback--cookie-notice--spacing:   ($fallback--base-em-ratio * 1.5em) / 2em !default;
+
+
+// Transitions:
+
+$fallback--cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !default;
+
+/* -- Basic styles ------------------------------------------------------------------------------ */
+
+    .cookie_notice {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        z-index: 2000;
+
+        padding: $fallback--cookie-notice--spacing;
+        
+        //display: -webkit-flex;
+        //display: -ms-flexbox;
+        //display: flex;
+        //-webkit-align-items: flex-end;
+        //     -ms-flex-align: end;
+        //        align-items: flex-end;
+                
+        opacity: 1;
+        
+        -webkit-transition: $fallback--cookie-notice--close-transition;
+                transition: $fallback--cookie-notice--close-transition;
+    }
+
+    .cookie_notice--close {
+        opacity: 0;
+        z-index: 0;
+    }
+
+
+    .cookie_notice__message {
+        //font-size: 0.875em;
+        
+        //-webkit-flex: 1 1 auto;
+        //    -ms-flex: 1 1 auto;
+        //        flex: 1 1 auto;
+        
+        display: table-cell;
+        width: 100%;
+    }
+
+    .cookie_notice__action {
+        display: table-cell;
+    }
+
+/* ---------------------------------------------------------------------------------------------- */
