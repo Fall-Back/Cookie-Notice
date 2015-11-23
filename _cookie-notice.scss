@@ -2,9 +2,33 @@
     Fall-Back Cookie Notice Pattern v0.1
 \*------------------------------------------------------------------------------------------------*/
 
+// Colours:
+
+// Slightly hacky way of allowing the main UI colour of this pattern to be:
+// - base-ui colour (if set)
+// - otherwise #999 
+// - but can be specifically overridden
+$t: false;
+@if variable-exists(fallback--base-ui-color) {
+    $t: $fallback--base-ui-color;
+} @else {
+    $t: #999;
+}
+$fallback--cookie-notice--ui-color:   $t !default;
+
+
+$fallback--cookie-notice--bg-color:   #000 !default;
+
+$fallback--cookie-notice__text-color: #fff !default;
+
+
+$fallback--cookie-notice__link--color:      lighten($fallback--cookie-notice--ui-color, 40%) !default;
+$fallback--cookie-notice__link--color--alt: lighten($fallback--cookie-notice--ui-color, 20%) !default;
+
+
 // Sizes:
 
-$fallback--cookie-notice--spacing:   ($fallback--base-em-ratio * 1.5em) / 2em !default;
+$fallback--cookie-notice--spacing:   ($fallback--base-em-ratio * 1.5em) / 3 !default;
 
 
 // Transitions:
@@ -20,6 +44,9 @@ $fallback--cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 
         z-index: 2000;
 
         padding: $fallback--cookie-notice--spacing;
+        
+        background-color: $fallback--cookie-notice--bg-color;
+        color: $fallback--cookie-notice--text-color;
         
         //display: -webkit-flex;
         //display: -ms-flexbox;
@@ -40,7 +67,7 @@ $fallback--cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 
     }
 
 
-    .cookie_notice__message {
+    .cookie_notice .cookie_notice__message {
         //font-size: 0.875em;
         
         //-webkit-flex: 1 1 auto;
@@ -50,9 +77,22 @@ $fallback--cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 
         display: table-cell;
         width: 100%;
     }
+    
+        .cookie_notice .cookie_notice__message a[href] {
+            color: $fallback--cookie-notice__link--color;
+        }
+        
+        .cookie_notice .cookie_notice__message a[href]:hover,
+        .cookie_notice .cookie_notice__message a[href]:active,
+        .cookie_notice .cookie_notice__message a[href]:focus {
+            color: $fallback--cookie-notice__link--color--alt;
+        }
 
-    .cookie_notice__action {
+
+    .cookie_notice .cookie_notice__action {
         display: table-cell;
     }
+    
+
 
 /* ---------------------------------------------------------------------------------------------- */
