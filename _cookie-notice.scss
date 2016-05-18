@@ -8,11 +8,9 @@
 // - base-ui colour (if set)
 // - otherwise #999 
 // - but can be specifically overridden
-$t: false;
+$t: #999;
 @if variable-exists(fallback--base-ui-color) {
     $t: $fallback--base-ui-color;
-} @else {
-    $t: #999;
 }
 $fallback--cookie-notice--ui-color:   $t !default;
 
