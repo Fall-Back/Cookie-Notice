@@ -7,7 +7,7 @@
     ],
     "description": "A simple pattern to include a dismissable cookie notice.",
     "main": "_cookie-notice.scss",
-    "ignore":[],
+    "ignore": [],
     "keywords": [
         "fallback",
         "css",
