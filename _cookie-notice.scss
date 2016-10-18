@@ -14,15 +14,15 @@ $t: #999;
 @if variable-exists(fallback--base-ui-color) {
     $t: $fallback--base-ui-color;
 }
-$fallback--cookie-notice--ui-color:   $t !default;
+$fallback--cookie-notice--ui-color:         $t !default;
 /*------------------------------------------------------------------------------------------------*/
 
 
 // Colours:
 
-$fallback--cookie-notice--bg-color:   #000 !default;
+$fallback--cookie-notice--bg-color:         #000 !default;
 
-$fallback--cookie-notice__text-color: #fff !default;
+$fallback--cookie-notice__text-color:       #fff !default;
 
 
 $fallback--cookie-notice__link--color:      lighten($fallback--cookie-notice--ui-color, 40%) !default;
@@ -31,7 +31,7 @@ $fallback--cookie-notice__link--color--alt: lighten($fallback--cookie-notice--ui
 
 // Sizes:
 
-$fallback--cookie-notice--spacing:   ($fallback--base-em-ratio * 1.5em) / 3 !default;
+$fallback--cookie-notice--spacing:          ($fallback--base-em-ratio * 1.5em) / 3 !default;
 
 
 // Transitions:
