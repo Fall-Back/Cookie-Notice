@@ -1,0 +1,143 @@
+/*
+    Colour contrast from https://gist.github.com/FStop/8959422
+    
+    Usage:
+    @if color_contrast($colour, #fff) < 2 {
+        color: #333;
+    }
+    @else{
+        color: #fff;
+    }
+*/
+/* Awesome contrast ratio function
+* via https://gist.github.com/voxpelli/6304812
+**/
+/*------------------------------------------------------------------------------------------------*    Fall-Back Icons v1.0.0
+    
+    Designed for use with the basic [CSS Mustard Cut](https://github.com/Fall-Back/CSS-Mustard-Cut)
+    IE 9+, FF 8+, Opera 12, [Chrome 29+, Android ~4.4+]
+    Chrome 29+, Opera 16+, Safari 6.1+, iOS 7+, Android ~4.4+
+    
+\*------------------------------------------------------------------------------------------------*/
+/*
+
+
+    <!-- At the top of each page: -->
+    <svg xmlns="http://www.w3.org/2000/svg" display="none">
+        <symbol id="icon-triangle-down" viewBox="0 0 12 16">
+            <path d="M1,6h10l-5,5L1,6z"></path>
+        </symbol>
+        <symbol id="icon-cross" viewBox="0 0 16 16">
+            <path d="M15.5,2L14,0.5l-6,6l-6-6L0.5,2l6,6l-6,6L2,15.5l6-6l6,6l1.5-1.5l-6-6L15.5,2z"></path>
+        </symbol>
+        <symbol id="icon-menu" viewBox="0 0 16 16">
+            <rect x="0" width="16" height="3"/>
+            <rect x="0" y="6" width="16" height="3"/>
+            <rect y="12" width="16" height="3"/>
+        </symbol>
+        <!-- Other <symbol>s... -->
+    </svg>
+    
+    
+    <!-- Where it's needed: -->
+    <svg width="0" height="0" class="icon  icon--narrow" aria-label="About Us Submenu"><use xlink:href="#icon-triangle-down"></use></svg>
+    <!-- Note the aria-label can be removed if equivelent text is already present or the icon is visual only -->
+
+*/
+/*
+    1. Override display attribute.
+*/
+.icon {
+  display: inline;
+  /* [1] */
+  fill: currentColor;
+  width: 1.14285714286em;
+  height: 1.14285714286em;
+  /*width: 1.71428571429em;
+    height: 1.71428571429em;*/
+  /* No idea why, exactly, but this seems to be the best position, we long as we ... */
+  /* ... prevent the icon affecting line-height: */
+  /*
+    -webkit-transform: scale(0.666);
+    -moz-transform: scale(0.666);
+    -ms-transform: scale(0.666);
+    transform: scale(0.666);*/ }
+
+.icon--narrow {
+  /*margin: -0.5em -0.25em;*/
+  width: 0.85714285714em; }
+
+_:-o-prefocus, :root .icon {
+  vertical-align: middle; }
+
+/*
+.icon symbol {
+    width: 1.14285714286em;
+    height: 1.14285714286em;
+}*/
+/*
+    No transform support for Opera Mini, so hack it back to 16px with ems.
+    Note, since Opera Mini doesn't support line-height, it will be vertically centered anyway.
+    1. Hack also affects Opera 12 which is supported by the Original Mustard Cut, so turning off
+       transform for this. Slight difference in position acceptable (lower).
+*/
+/*
+_:-o-prefocus, :root .icon {
+    width: 1.14285714286em;
+    height: 1.14285714286em;
+    transform: none; /* [1] *
+}*/
+.icon-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+/*------------------------------------------------------------------------------------------------*    Fall-Back Cookie Notice Pattern v0.1
+\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*    Import Fall-Back vars:
+
+    Slightly hacky way of allowing the main UI colour of this pattern to be:
+     - base-ui colour (if set)
+     - otherwise #999
+     - but can be specifically overridden
+\*------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------*/
+/* -- Basic styles ------------------------------------------------------------------------------ */
+.cookie_notice {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 2000;
+  padding: 0.75em;
+  background-color: #000;
+  color: #fff;
+  opacity: 1;
+  -webkit-transition: opacity 1s ease 0s, z-index 1s ease 1s;
+  transition: opacity 1s ease 0s, z-index 1s ease 1s; }
+
+.cookie_notice--close {
+  opacity: 0;
+  z-index: 0; }
+
+.cookie_notice .cookie_notice__message {
+  display: table-cell;
+  width: 100%; }
+
+.cookie_notice .cookie_notice__message a[href] {
+  color: #ccb3e6; }
+
+.cookie_notice .cookie_notice__message a[href]:hover,
+.cookie_notice .cookie_notice__message a[href]:active,
+.cookie_notice .cookie_notice__message a[href]:focus {
+  color: #9966cc; }
+
+.cookie_notice .cookie_notice__action {
+  display: table-cell; }
+
+/* ---------------------------------------------------------------------------------------------- */
