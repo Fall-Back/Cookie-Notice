@@ -22,13 +22,13 @@ var cookie_close_class            = 'cookie_notice--close';
 // Not sure of the best way to handle this though:
 
 // Example 1 (attribute-based):
-// `<script type="template" cookie-notice cookie_notice_name="cookie_notice" cookie_expire_days="60" cookie_notice_effect_duration="1000">`
+// `<script type="template" cookie_notice cookie_notice_name="cookie_notice" cookie_expire_days="60" cookie_notice_effect_duration="1000">`
 
 // Example 2 (JSON):
-// `<script type="template" cookie-notice="{name:'cookie_notice', expire_days:60, effect_duration:1000}">`
+// `<script type="template" cookie_notice="{name:'cookie_notice', expire_days:60, effect_duration:1000}">`
 
 // Example 3: (function-esque)
-// `<script type="template" cookie-notice="cookie_notice, 60, 1000">`
+// `<script type="template" cookie_notice="cookie_notice, 60, 1000">`
 
 var cookie_name                   = 'cookie_notice';
 var cookie_expire_days            = 60;
