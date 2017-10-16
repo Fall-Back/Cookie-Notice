@@ -19,11 +19,14 @@ var cookie_close_class            = 'cookie_notice--close';
 // If I remove the HTML settings, I'd be tempted to remove these too, perhaps as attributes to the
 // script tag. Then I won't need this file at all, and I've never liked having to configure JS in
 // this way. I've always preferred doing it via markup.
-// Not sure of the best way to handle this though.
+// Not sure of the best way to handle this though:
+
 // Example 1 (attribute-based):
 // `<script type="template" cookie-notice cookie_notice_name="cookie_notice" cookie_expire_days="60" cookie_notice_effect_duration="1000">`
+
 // Example 2 (JSON):
 // `<script type="template" cookie-notice="{name:'cookie_notice', expire_days:60, effect_duration:1000}">`
+
 // Example 3: (function-esque)
 // `<script type="template" cookie-notice="cookie_notice, 60, 1000">`
 
