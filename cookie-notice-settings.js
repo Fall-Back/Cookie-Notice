@@ -7,7 +7,7 @@
 \*------------------------------------------------------------------------------------------------*/
 
 // Settings used in HTML.
-// MAY BE REmoved: I'm considering moving the HTML into the main template markup via a
+// MAY BE Removed: I'm considering moving the HTML into the main template markup via a
 // `<script type="template">` tag. If I do, these won't be necessary.
 var cookie_notice_id              = 'cookie_notice';
 var cookie_button_id              = 'accept_cookies';
