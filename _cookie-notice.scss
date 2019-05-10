@@ -43,6 +43,7 @@ $fallback--cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 
     .cookie_notice {
         position: fixed;
         width: 100%;
+        left: 0;
         bottom: 0;
         z-index: 2000;
 
