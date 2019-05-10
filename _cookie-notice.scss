@@ -12,31 +12,31 @@
 \*------------------------------------------------------------------------------------------------*/
 $t: #999;
 @if variable-exists(fallback--base-ui-color) {
-    $t: $fallback--base-ui-color;
+    $t: $f__base-ui-color;
 }
-$fallback--cookie-notice--ui-color:         $t !default;
+$f__cookie-notice--ui-color:         $t !default;
 /*------------------------------------------------------------------------------------------------*/
 
 
 // Colours:
 
-$fallback--cookie-notice--bg-color:         #000 !default;
+$f__cookie-notice--bg-color:         #000 !default;
 
-$fallback--cookie-notice__text-color:       #fff !default;
+$f__cookie-notice__text-color:       #fff !default;
 
 
-$fallback--cookie-notice__link--color:      lighten($fallback--cookie-notice--ui-color, 40%) !default;
-$fallback--cookie-notice__link--color--alt: lighten($fallback--cookie-notice--ui-color, 20%) !default;
+$f__cookie-notice__link--color:      lighten($f__cookie-notice--ui-color, 40%) !default;
+$f__cookie-notice__link--color--alt: lighten($f__cookie-notice--ui-color, 20%) !default;
 
 
 // Sizes:
 
-$fallback--cookie-notice--spacing:          ($fallback--base-em-ratio * 1.5em) / 3 !default;
+$f__cookie-notice--spacing:          ($f__base-em-ratio * 1.5em) / 3 !default;
 
 
 // Transitions:
 
-$fallback--cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !default;
+$f__cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !default;
 
 /* -- Basic styles ------------------------------------------------------------------------------ */
 
@@ -47,10 +47,10 @@ $fallback--cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 
         bottom: 0;
         z-index: 2000;
 
-        padding: $fallback--cookie-notice--spacing;
+        padding: $f__cookie-notice--spacing;
         
-        background-color: $fallback--cookie-notice--bg-color;
-        color: $fallback--cookie-notice--text-color;
+        background-color: $f__cookie-notice--bg-color;
+        color: $f__cookie-notice--text-color;
         
         //display: -webkit-flex;
         //display: -ms-flexbox;
@@ -61,8 +61,8 @@ $fallback--cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 
                 
         opacity: 1;
         
-        -webkit-transition: $fallback--cookie-notice--close-transition;
-                transition: $fallback--cookie-notice--close-transition;
+        -webkit-transition: $f__cookie-notice--close-transition;
+                transition: $f__cookie-notice--close-transition;
     }
 
     .cookie_notice--close {
@@ -83,13 +83,13 @@ $fallback--cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 
     }
     
         .cookie_notice .cookie_notice__message a[href] {
-            color: $fallback--cookie-notice__link--color;
+            color: $f__cookie-notice__link--color;
         }
         
         .cookie_notice .cookie_notice__message a[href]:hover,
         .cookie_notice .cookie_notice__message a[href]:active,
         .cookie_notice .cookie_notice__message a[href]:focus {
-            color: $fallback--cookie-notice__link--color--alt;
+            color: $f__cookie-notice__link--color--alt;
         }
 
 
