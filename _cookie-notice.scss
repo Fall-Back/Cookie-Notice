@@ -1,6 +1,9 @@
-// Fall-Back Cookie Notice Pattern v0.1
-/*------------------------------------------------------------------------------------------------*\
-\*------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------|
+
+    COOKIE NOTICE
+    ============================================================================================
+
+|-------------------------------------------------------------------------------------------------*/
 
 /*------------------------------------------------------------------------------------------------*\
     Import Fall-Back vars:
@@ -12,45 +15,54 @@
 \*------------------------------------------------------------------------------------------------*/
 $t: #999;
 @if variable-exists(fallback--base-ui-color) {
-    $t: $f__base-ui-color;
+    $t: $s__base-ui-color;
 }
-$f__cookie-notice--ui-color:         $t !default;
+$s__cookie-notice--ui-color:         $t !default;
 /*------------------------------------------------------------------------------------------------*/
 
 
 // Colours:
 
-$f__cookie-notice--bg-color:         #000 !default;
+$s__cookie-notice--bg-color:         #000 !default;
 
-$f__cookie-notice__text-color:       #fff !default;
+$s__cookie-notice__text-color:       #fff !default;
 
 
-$f__cookie-notice__link--color:      lighten($f__cookie-notice--ui-color, 40%) !default;
-$f__cookie-notice__link--color--alt: lighten($f__cookie-notice--ui-color, 20%) !default;
+$s__cookie-notice__link--color:      lighten($s__cookie-notice--ui-color, 40%) !default;
+$s__cookie-notice__link--color--alt: lighten($s__cookie-notice--ui-color, 20%) !default;
 
 
 // Sizes:
 
-$f__cookie-notice--spacing:          ($f__base-em-ratio * 1.5em) / 3 !default;
+$s__cookie-notice--spacing:          ($s__base-em-ratio * 1.5em) / 3 !default;
 
 
 // Transitions:
 
-$f__cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !default;
+$s__cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !default;
+
+// Selectors:
+$ss__cookie_notice: "#cookie_notice" !default;
+$ss__cookie_notice--close: "##{cookie_notice}[data-close=\"true\"]" !default;
+$ss__cookie_notice__message: "##{cookie_notice} p" !default;
+$ss__cookie_notice__action: "##{cookie_notice} button" !default;
 
 /* -- Basic styles ------------------------------------------------------------------------------ */
 
-    .cookie_notice {
+    #{$ss__cookie_notice} {
         position: fixed;
         width: 100%;
         left: 0;
         bottom: 0;
         z-index: 2000;
-
-        padding: $f__cookie-notice--spacing;
         
-        background-color: $f__cookie-notice--bg-color;
-        color: $f__cookie-notice--text-color;
+        display: flex;
+        align-items: flex-start;
+
+        padding: $s__cookie-notice--spacing;
+        
+        background-color: $s__cookie-notice--bg-color;
+        color: $s__cookie-notice--text-color;
         
         //display: -webkit-flex;
         //display: -ms-flexbox;
@@ -61,40 +73,43 @@ $f__cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !def
                 
         opacity: 1;
         
-        -webkit-transition: $f__cookie-notice--close-transition;
-                transition: $f__cookie-notice--close-transition;
+        -webkit-transition: $s__cookie-notice--close-transition;
+                transition: $s__cookie-notice--close-transition;
     }
 
-    .cookie_notice--close {
+    #{$ss__cookie_notice--close} {
         opacity: 0;
         z-index: 0;
     }
 
 
-    .cookie_notice .cookie_notice__message {
+    #{$ss__cookie_notice__message} {
         //font-size: 0.875em;
         
         //-webkit-flex: 1 1 auto;
         //    -ms-flex: 1 1 auto;
         //        flex: 1 1 auto;
         
-        display: table-cell;
-        width: 100%;
+        //display: table-cell;
+        //width: 100%;
+        
+        padding: 0 $s__cookie-notice--spacing;
+        margin: #{$s__cookie-notice--spacing / 2} 0;
     }
     
-        .cookie_notice .cookie_notice__message a[href] {
-            color: $f__cookie-notice__link--color;
+        #{$ss__cookie_notice__message} a[href] {
+            color: $s__cookie-notice__link--color;
         }
         
-        .cookie_notice .cookie_notice__message a[href]:hover,
-        .cookie_notice .cookie_notice__message a[href]:active,
-        .cookie_notice .cookie_notice__message a[href]:focus {
-            color: $f__cookie-notice__link--color--alt;
+        #{$ss__cookie_notice__message} a[href]:hover,
+        #{$ss__cookie_notice__message} a[href]:active,
+        #{$ss__cookie_notice__message} a[href]:focus {
+            color: $s__cookie-notice__link--color--alt;
         }
 
 
-    .cookie_notice .cookie_notice__action {
-        display: table-cell;
+    #{$ss__cookie_notice__action}  {
+        //display: table-cell;
     }
     
 

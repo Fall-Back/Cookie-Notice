@@ -48,9 +48,10 @@
                 
                 document.getElementById(cookie_button_id).onclick = function(){
                     createCookie(cookie_name, 'true', cookie_expire_days);
-                    document.getElementById(cookie_notice_id).className += '  ' + cookie_close_class;
+                    document.getElementById(cookie_notice_id).setAttribute('data-close', true);
+                    //document.getElementById(cookie_notice_id).className += '  ' + cookie_close_class;
                     /*
-                        Without CSS (or transition suport - IE9) the notice won't disappear, so wait until fade 
+                        Without CSS (or transition support - IE9) the notice won't disappear, so wait until fade 
                         has finished then remove:
                     */
                     setTimeout(function(){
