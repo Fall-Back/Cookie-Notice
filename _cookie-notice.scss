@@ -24,6 +24,7 @@ $s__cookie-notice--ui-color:         $t !default;
 // Colours:
 
 $s__cookie-notice--bg-color:         #000 !default;
+$s__cookie-notice--border:           0 !default;
 
 $s__cookie-notice__text-color:       #fff !default;
 
@@ -42,6 +43,7 @@ $s__cookie-notice--spacing:          ($s__base-em-ratio * 1.5em) / 3 !default;
 $s__cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !default;
 
 // Selectors:
+
 $ss__cookie_notice: "#cookie_notice" !default;
 $ss__cookie_notice--close: "##{cookie_notice}[data-close=\"true\"]" !default;
 $ss__cookie_notice__message: "##{cookie_notice} p" !default;
@@ -55,24 +57,27 @@ $ss__cookie_notice__action: "##{cookie_notice} button" !default;
         left: 0;
         bottom: 0;
         z-index: 2000;
-        
+
         display: flex;
         align-items: flex-start;
 
         padding: $s__cookie-notice--spacing;
-        
+        margin: 0;
+
         background-color: $s__cookie-notice--bg-color;
         color: $s__cookie-notice--text-color;
-        
+
+        border: $s__cookie-notice--border;
+
         //display: -webkit-flex;
         //display: -ms-flexbox;
         //display: flex;
         //-webkit-align-items: flex-end;
         //     -ms-flex-align: end;
         //        align-items: flex-end;
-                
+
         opacity: 1;
-        
+
         -webkit-transition: $s__cookie-notice--close-transition;
                 transition: $s__cookie-notice--close-transition;
     }
@@ -85,22 +90,22 @@ $ss__cookie_notice__action: "##{cookie_notice} button" !default;
 
     #{$ss__cookie_notice__message} {
         //font-size: 0.875em;
-        
+
         //-webkit-flex: 1 1 auto;
         //    -ms-flex: 1 1 auto;
         //        flex: 1 1 auto;
-        
+
         //display: table-cell;
         //width: 100%;
-        
+
         padding: 0 $s__cookie-notice--spacing;
         margin: #{$s__cookie-notice--spacing / 2} 0;
     }
-    
+
         #{$ss__cookie_notice__message} a[href] {
             color: $s__cookie-notice__link--color;
         }
-        
+
         #{$ss__cookie_notice__message} a[href]:hover,
         #{$ss__cookie_notice__message} a[href]:active,
         #{$ss__cookie_notice__message} a[href]:focus {
@@ -111,7 +116,7 @@ $ss__cookie_notice__action: "##{cookie_notice} button" !default;
     #{$ss__cookie_notice__action}  {
         //display: table-cell;
     }
-    
+
 
 
 /* ---------------------------------------------------------------------------------------------- */
