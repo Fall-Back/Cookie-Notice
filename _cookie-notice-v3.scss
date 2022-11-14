@@ -46,17 +46,19 @@ $s__cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !def
 /* -- Basic styles ------------------------------------------------------------------------------ */
 
     #{$ss__cookie_notice} {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        z-index: 2000;
+
         opacity: 1;
 
         -webkit-transition: $s__cookie-notice--close-transition;
                 transition: $s__cookie-notice--close-transition;
 
         fieldset {
-            position: fixed;
-            width: 100%;
-            left: 0;
-            bottom: 0;
-            z-index: 2000;
+
 
             display: flex;
             flex-wrap: wrap;
