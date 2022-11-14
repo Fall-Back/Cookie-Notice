@@ -1,0 +1,16 @@
+/*-------------------------------------------------------------------------------------------------|
+
+    COOKIE NOTICE
+    ============================================================================================
+
+|-------------------------------------------------------------------------------------------------*/
+
+// Selectors:
+
+$ss__cookie_notice: "#cookie_notice" !default;
+$ss__cookie_notice__message: "#{$ss__cookie_notice} .cookie_notice__message" !default;
+$ss__cookie_notice__action: "#{$ss__cookie_notice} .cookie_notice__action" !default;
+$ss__cookie_notice__button: "#{$ss__cookie_notice} .cookie_notice__button" !default;
+$ss__cookie_notice--close: "#{$ss__cookie_notice}[data-close=\"true\"]" !default;
+
+@import "_cookie-notice-v3";

@@ -1,0 +1,109 @@
+/*-------------------------------------------------------------------------------------------------|
+
+    COOKIE NOTICE v3
+    ============================================================================================
+
+|-------------------------------------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------------------------------------*\
+    Import Fall-Back vars:
+
+    Slightly hacky way of allowing the main UI colour of this pattern to be:
+     - base-ui colour (if set)
+     - otherwise #999
+     - but can be specifically overridden
+\*------------------------------------------------------------------------------------------------*/
+$t: #999;
+@if variable-exists(fallback--base-ui-color) {
+    $t: $s__base-ui-color;
+}
+$s__cookie-notice--ui-color:         $t !default;
+/*------------------------------------------------------------------------------------------------*/
+
+
+// Colours:
+
+$s__cookie-notice--bg-color:         #000 !default;
+$s__cookie-notice--border:           0 !default;
+
+$s__cookie-notice__text-color:       #fff !default;
+
+
+$s__cookie-notice__link--color:      lighten($s__cookie-notice--ui-color, 40%) !default;
+$s__cookie-notice__link--color--alt: lighten($s__cookie-notice--ui-color, 20%) !default;
+
+
+// Sizes:
+
+$s__cookie-notice--spacing:          ($s__base-em-ratio * 1.5em) / 3 !default;
+
+
+// Transitions:
+
+$s__cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !default;
+
+
+/* -- Basic styles ------------------------------------------------------------------------------ */
+
+    #{$ss__cookie_notice} fieldset {
+        position: fixed;
+        width: 100%;
+        left: 0;
+        bottom: 0;
+        z-index: 2000;
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+
+        padding: $s__cookie-notice--spacing;
+        margin: 0;
+
+        background-color: $s__cookie-notice--bg-color;
+        color: $s__cookie-notice--text-color;
+
+        border: $s__cookie-notice--border;
+
+        opacity: 1;
+
+        -webkit-transition: $s__cookie-notice--close-transition;
+                transition: $s__cookie-notice--close-transition;
+
+    }
+
+    #{$ss__cookie_notice--close} {
+        opacity: 0;
+        z-index: 0;
+    }
+
+
+    #{$ss__cookie_notice__message} {
+        flex-basis: 80%;
+        flex-grow: 1;
+
+        padding: 0;
+        margin: calc($s__cookie-notice--spacing / 2) 0;
+    }
+
+        #{$ss__cookie_notice__message} a[href] {
+            color: $s__cookie-notice__link--color;
+        }
+
+        #{$ss__cookie_notice__message} a[href]:hover,
+        #{$ss__cookie_notice__message} a[href]:active,
+        #{$ss__cookie_notice__message} a[href]:focus {
+            color: $s__cookie-notice__link--color--alt;
+        }
+
+
+    #{$ss__cookie_notice__action}  {
+        flex-grow: 1;
+        text-align: right;
+
+        padding-left: $s__cookie-notice--spacing;
+        margin: calc($s__cookie-notice--spacing / 2) 0;
+    }
+
+
+
+/* ---------------------------------------------------------------------------------------------- */
