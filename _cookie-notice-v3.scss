@@ -45,30 +45,31 @@ $s__cookie-notice--close-transition: opacity 1s ease 0s, z-index 1s ease 1s !def
 
 /* -- Basic styles ------------------------------------------------------------------------------ */
 
-    #{$ss__cookie_notice} fieldset {
-        position: fixed;
-        width: 100%;
-        left: 0;
-        bottom: 0;
-        z-index: 2000;
-
-        display: flex;
-        flex-wrap: wrap;
-        align-items: flex-end;
-
-        padding: $s__cookie-notice--spacing;
-        margin: 0;
-
-        background-color: $s__cookie-notice--bg-color;
-        color: $s__cookie-notice--text-color;
-
-        border: $s__cookie-notice--border;
-
+    #{$ss__cookie_notice} {
         opacity: 1;
 
         -webkit-transition: $s__cookie-notice--close-transition;
                 transition: $s__cookie-notice--close-transition;
 
+        fieldset {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            z-index: 2000;
+
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-end;
+
+            padding: $s__cookie-notice--spacing;
+            margin: 0;
+
+            background-color: $s__cookie-notice--bg-color;
+            color: $s__cookie-notice--text-color;
+
+            border: $s__cookie-notice--border;
+        }
     }
 
     #{$ss__cookie_notice--close} {
