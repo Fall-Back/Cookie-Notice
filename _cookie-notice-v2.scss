@@ -5,8 +5,6 @@
 
 |-------------------------------------------------------------------------------------------------*/
 
-@use 'sass:math';
-
 /*------------------------------------------------------------------------------------------------*\
     Import Fall-Back vars:
 
@@ -37,7 +35,7 @@ $s__cookie-notice__link--color--alt: lighten($s__cookie-notice--ui-color, 20%) !
 
 // Sizes:
 
-$s__cookie-notice--spacing:          math.div(($s__base-em-ratio * 1.5em), 3) !default;
+$s__cookie-notice--spacing:          ($s__base-em-ratio * 1.5em) / 3 !default;
 
 
 // Transitions:

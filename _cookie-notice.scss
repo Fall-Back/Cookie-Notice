@@ -101,7 +101,7 @@ $ss__cookie_notice__action: "##{cookie_notice} button" !default;
         //width: 100%;
 
         padding: 0 $s__cookie-notice--spacing;
-        margin: #{$s__cookie-notice--spacing / 2} 0;
+        margin: math.div($s__cookie-notice--spacing, 2) 0;
     }
 
         #{$ss__cookie_notice__message} a[href] {
